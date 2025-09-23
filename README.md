@@ -46,6 +46,10 @@ go build -o go-cli-to-do
 ./go-cli-to-do delete 2
 ```
 
+## Improvements
+- Use SQLite or similar DB instead of file system.
+- Add due dates.
+
 ## Built with
 - Go
 - Cobra
