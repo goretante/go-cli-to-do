@@ -1,3 +1,6 @@
+/*
+Copyright © 2025 Ante Goreta agoret00@fesb.hr
+*/
 package cmd
 
 import (
