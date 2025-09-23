@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var deleteCmd = cobra.Command{
+var deleteCmd = &cobra.Command{
 	Use:   "delete [task number]",
 	Short: "Delete task.",
 	Long:  "Delete selected task.",
