@@ -33,3 +33,6 @@ go.work.sum
 
 # Tasks file
 tasks.json
+
+# SQLite database
+*.db

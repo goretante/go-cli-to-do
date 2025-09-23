@@ -10,7 +10,7 @@ Manage your daily tasks directly from the terminal, add, list, complete, and del
 - Mark tasks as done
 - Delete tasks
 - View task details
-- Local file-based storage
+- SQLite storage
 - Fast, simple and easy to use
 
 ## Installation
@@ -47,12 +47,13 @@ go build -o go-cli-to-do
 ```
 
 ## Improvements
-- Use SQLite or similar DB instead of file system.
 - Add due dates.
 
 ## Built with
 - Go
 - Cobra
+- SQLite
+- GORM
 
 ## License
 MIT license. See [LICENSE](https://github.com/goretante/go-cli-to-do/blob/main/LICENSE) for details.

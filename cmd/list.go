@@ -6,6 +6,8 @@ package cmd
 import (
 	"fmt"
 
+	"github.com/goretante/go-cli-to-do/internal/db"
+	"github.com/goretante/go-cli-to-do/internal/models"
 	"github.com/spf13/cobra"
 )
 
@@ -14,18 +16,18 @@ var listCmd = &cobra.Command{
 	Short: "List all tasks",
 	Long:  "List all tasks with their status.",
 	Run: func(cmd *cobra.Command, args []string) {
-		tasks := loadTasks()
-		if len(tasks) == 0 {
-			fmt.Println("No tasks found.")
+		var tasks []models.Task
+		if err := db.DB.Find(&tasks).Error; err != nil {
+			fmt.Printf("Failed to list tasks: %v", err)
 			return
 		}
 
-		for i, task := range tasks {
+		for _, t := range tasks {
 			status := "✖"
-			if task.IsDone {
+			if t.IsDone {
 				status = "✓"
 			}
-			fmt.Printf("%d.\t%s\t[%s]\n", i+1, task.Description, status)
+			fmt.Printf("%d.\t%s\t[%s]\n", t.ID, t.Description, status)
 		}
 	},
 }
