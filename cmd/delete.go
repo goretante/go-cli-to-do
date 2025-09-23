@@ -34,7 +34,7 @@ var deleteCmd = &cobra.Command{
 		taskDescription := task.Description
 		result = db.DB.Delete(&task)
 		if result.Error != nil {
-			fmt.Printf("Failed to delete task \"%s\": %w.\n", taskDescription, result.Error)
+			fmt.Printf("Failed to delete task \"%s\": %v.\n", taskDescription, result.Error)
 			return
 		}
 		fmt.Printf("Deleted \"%s\" task.\n", taskDescription)
