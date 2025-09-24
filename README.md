@@ -31,7 +31,7 @@ go build -o go-cli-to-do
 ## Usage
 ```bash
 # Add a new task
-./go-cli-to-do add "Buy groceries"
+./go-cli-to-do add "Buy groceries" [--date 2025-09-22]
 
 # List tasks
 ./go-cli-to-do list
@@ -46,14 +46,12 @@ go build -o go-cli-to-do
 ./go-cli-to-do delete 2
 ```
 
-## Improvements
-- Add due dates.
-
 ## Built with
 - Go
 - Cobra
 - SQLite
 - GORM
+- fatih/color
 
 ## License
 MIT license. See [LICENSE](https://github.com/goretante/go-cli-to-do/blob/main/LICENSE) for details.
