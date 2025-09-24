@@ -13,4 +13,5 @@ type Task struct {
 	IsDone      bool      `gorm:"default:false" json:"isDone"`
 	CreatedOn   time.Time `gorm:"autoCreateTime" json:"createdOn"`
 	UpdatedOn   time.Time `gorm:"autoUpdateTime" json:"updatedOn"`
+	DueDate     time.Time `gorm:"dueDate"`
 }

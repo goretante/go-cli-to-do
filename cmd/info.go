@@ -35,14 +35,21 @@ var infoCmd = &cobra.Command{
 		if task.IsDone {
 			taskStatus = "Done"
 		}
+
+		due := "N/A"
+		if !task.DueDate.IsZero() {
+			due = task.DueDate.Format("2006-01-02")
+		}
 		fmt.Printf(`%d. %s
   - State: %s
   - Task created: %s
   - Task updated: %s
+  - Due: %s
 `,
 			task.ID, task.Description,
 			taskStatus,
 			task.CreatedOn.Format("2006-01-02 15:04:05"),
-			task.UpdatedOn.Format("2006-01-02 15:04:05"))
+			task.UpdatedOn.Format("2006-01-02 15:04:05"),
+			due)
 	},
 }

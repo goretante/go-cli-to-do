@@ -37,4 +37,6 @@ func init() {
 	rootCmd.AddCommand(doneCmd)
 	rootCmd.AddCommand(deleteCmd)
 	rootCmd.AddCommand(infoCmd)
+
+	addCmd.Flags().StringVarP(&dueDate, "date", "d", "", "Date until the task needs to be done (format: YYYY-MM-DD)")
 }
